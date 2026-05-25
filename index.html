@@ -1,39 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>Weishi Tour | Audio Guide</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weishi Tour | 加里宁格勒音频导游</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Stalinist+One&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 15px; background: #fdf8f4; }
-        h1 { text-align: center; color: #b8860b; }
-        .card { background: #fff; border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
-        audio { width: 100%; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #e2d9bc;
+            color: #333;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px 15px;
+        }
+        h1 {
+            font-family: 'Stalinist One', cursive;
+            color: #780513;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        h2 {
+            font-family: 'Stalinist One', cursive;
+            color: #780513;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #780513;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 15px;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .slider::-webkit-scrollbar { display: none; }
+        .slide {
+            scroll-snap-align: start;
+            min-width: 100%;
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(120,5,19,0.1);
+            border-top: 4px solid #780513;
+        }
+        .slide h3 {
+            font-family: 'Stalinist One', cursive;
+            color: #780513;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        .slide p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            color: #555;
+        }
+        audio {
+            width: 100%;
+            margin-top: 5px;
+        }
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ccc;
+        }
+        .dot.active { background: #780513; }
+
+        .food-btn {
+            width: 100%;
+            background: #780513;
+            color: #e2d9bc;
+            border: none;
+            padding: 14px;
+            font-family: 'Stalinist One', cursive;
+            font-size: 16px;
+            border-radius: 12px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        .food-list {
+            display: none;
+            background: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(120,5,19,0.08);
+        }
+        .food-list.show { display: block; }
+        .food-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #e2d9bc;
+            font-size: 14px;
+        }
+        .food-item:last-child { border-bottom: none; }
+        .food-item strong { color: #780513; }
+
+        .site-link {
+            text-align: center;
+            margin: 15px 0 25px;
+        }
+        .site-link a {
+            color: #780513;
+            font-weight: 600;
+            text-decoration: underline;
+            font-size: 14px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            color: #999;
+            padding-top: 15px;
+            border-top: 1px solid #78051333;
+        }
     </style>
 </head>
 <body>
-    <h1>Weishi Tour</h1>
-    <p style="text-align:center;">Your personal audio guide to Kaliningrad</p>
+    <div class="container">
+        <h1>Weishi Tour</h1>
+        <p class="subtitle">加里宁格勒 · 你的个人音频导游</p>
 
-    <div class="card">
-        <h3>🎧 Audio Guide</h3>
-        <audio controls>
-            <source src="2.mp3" type="audio/mpeg">
-        </audio>
+        <!-- Слайдер с аудиогидами -->
+        <div class="slider" id="slider">
+            <div class="slide">
+                <h3>🎧 康德岛和大教堂</h3>
+                <p>Кафедральный собор — главный символ Калининграда на острове Канта. Здесь находится могила великого философа Иммануила Канта и уникальный органный зал.</p>
+                <audio controls controlsList="nodownload">
+                    <source src="2.mp3" type="audio/mpeg">
+                    你的浏览器不支持音频。
+                </audio>
+            </div>
+            <div class="slide">
+                <h3>🎧 渔村</h3>
+                <p>Рыбная деревня — стилизованный квартал с ресторанами и смотровой площадкой с видом на реку Преголя. Отличное место для прогулок и фотографий.</p>
+                <audio controls controlsList="nodownload">
+                    <source src="3.mp3" type="audio/mpeg">
+                    你的浏览器不支持音频。
+                </audio>
+            </div>
+            <div class="slide">
+                <h3>🎧 琥珀博物馆</h3>
+                <p>Музей янтаря — крупнейшая коллекция солнечного камня в мире. Находится в крепостной башне XIX века.</p>
+                <audio controls controlsList="nodownload">
+                    <source src="4.mp3" type="audio/mpeg">
+                    你的浏览器不支持音频。
+                </audio>
+            </div>
+            <div class="slide">
+                <h3>🎧 世界海洋博物馆</h3>
+                <p>Музей Мирового океана — уникальный музейный комплекс с настоящей подводной лодкой и кораблями.</p>
+                <audio controls controlsList="nodownload">
+                    <source src="5.mp3" type="audio/mpeg">
+                    你的浏览器不支持音频。
+                </audio>
+            </div>
+        </div>
+
+        <!-- Точки-индикаторы -->
+        <div class="slider-nav">
+            <div class="dot active"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <!-- Кнопка "Где поесть" -->
+        <button class="food-btn" onclick="toggleFood()">🍴 哪里好吃？</button>
+        <div class="food-list" id="foodList">
+            <div class="food-item"><strong>Борщ и Сало</strong> — 乌克兰菜，推荐红菜汤和腌猪油<br><small>пл. Победы, 10</small></div>
+            <div class="food-item"><strong>Рыбная деревня</strong> — 波罗的海鱼类和海鲜<br><small>ул. Октябрьская, 4</small></div>
+            <div class="food-item"><strong>Кёнигсбергские клопсы</strong> — 传统的柯尼斯堡肉丸配奶油酱<br><small>许多餐厅都有供应</small></div>
+        </div>
+
+        <!-- Ссылка на сайт -->
+        <div class="site-link">
+            <a href="https://weishitour.tilda.ws/" target="_blank">🌐 我们的完整网站 → WeishiTour.tilda.ws</a>
+        </div>
+
+        <div class="footer">
+            © 2025 Weishi Tour. Все права защищены. 加里宁格勒 · Калининград
+        </div>
     </div>
 
-    <div class="card">
-        <h3>📍 Kant Island & Cathedral</h3>
-        <p>The main symbol of Kaliningrad. Here you'll find Kant's grave and a unique organ hall.</p>
-    </div>
+    <script>
+        // Переключение списка "Где поесть"
+        function toggleFood() {
+            document.getElementById('foodList').classList.toggle('show');
+        }
 
-    <div class="card">
-        <h3>📍 Fishing Village</h3>
-        <p>A stylized quarter with restaurants and a viewpoint.</p>
-    </div>
-
-    <div class="card">
-        <h3>📍 Amber Museum</h3>
-        <p>The world's largest collection of solar stone.</p>
-    </div>
+        // Обновление точек-индикаторов при скролле слайдера
+        const slider = document.getElementById('slider');
+        const dots = document.querySelectorAll('.dot');
+        slider.addEventListener('scroll', function() {
+            const index = Math.round(slider.scrollLeft / slider.offsetWidth);
+            dots.forEach((d, i) => { d.classList.toggle('active', i === index); });
+        });
+    </script>
 </body>
 </html>
