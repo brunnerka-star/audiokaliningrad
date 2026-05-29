@@ -11,7 +11,8 @@
         body { font-family: 'Open Sans', sans-serif; background-color: #e2d9bc; color: #333; min-height: 100vh; }
         .container { max-width: 500px; margin: 0 auto; padding: 15px; }
         h1 { font-family: 'Stalinist One', cursive; color: #780513; text-align: center; font-size: 22px; margin-bottom: 5px; }
-        .subtitle { text-align: center; color: #780513; font-size: 13px; margin-bottom: 15px; }
+        .subtitle { text-align: center; color: #780513; font-size: 13px; margin-bottom: 5px; }
+        .route-label { text-align: center; color: #780513; font-size: 14px; font-weight: 600; margin-bottom: 15px; }
         .slider-container { position: relative; margin-bottom: 10px; }
         .slide { display: none; }
         .slide.active { display: block; }
@@ -51,6 +52,7 @@
     <div class="container">
         <h1>Weishi Tour</h1>
         <p class="subtitle">加里宁格勒 · 你的个人音频导游</p>
+        <p class="route-label">🗺️ 路线 — 加里宁格勒市中心</p>
 
         <div class="slider-container" id="slider">
             <div class="slide active" data-coords="54.706555,20.513002" data-title="康德墓" data-addr="ул. Канта, 1" data-subs="kant">
@@ -120,9 +122,9 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         const subsData = {
-            kant: `<p>今天，您来到了最具历史意义的地标之一——伊曼努尔·康德墓，这位哲学家的名字几乎全世界都知道。</p><p>正是在这里，1724年，伊曼努尔·康德出生了。他终其一生几乎从未离开过家乡，却创作了永远改变哲学的著作。</p><p>感谢您参观此地。继续沿着康德岛和加里宁格勒漫步，您将看到这座城市错综复杂、多重层次的历史痕迹。</p>`,
+            kant: `<p>今天，您来到了最具历史意义的地标之一——伊曼努尔·康德墓，这位哲学家的名字几乎全世界都知道。</p><p>正是在这里，1724年，伊曼努尔·康德出生了。他终其一生几乎从未离开过家乡，却创作了永远改变哲学的著作。</p><p>感谢您参观此地。</p>`,
             sobor: `<p>现在您位于加里宁格勒的主要标志之一——柯尼斯堡大教堂旁。这不仅是一座古老的建筑，更是这座城市真正的心脏。</p><p>大教堂的建设大约始于1333年。大教堂与伊曼努尔·康德的名字紧密相连。</p>`,
-            rybnaya: `<p>现在您位于现代加里宁格勒最受欢迎的地方之一——渔村。这个地方常被称为"明信片上的加里宁格勒"。</p><p>如今，渔村是一个文化旅游中心，汇聚了餐厅、酒店、纪念品商店和咖啡馆。</p>`,
+            rybnaya: `<p>现在您位于现代加里宁格勒最受欢迎的地方之一——渔村。这个地方常被称为"明信片上的加里宁格勒"。</p><p>如今，渔村是一个文化旅游中心。</p>`,
             pobedy: `<p>您现在位于现代加里宁格勒的正中心——胜利广场。这是城市的主要广场。</p><p>在柯尼斯堡时代，广场被称为汉萨广场。战后，它获得了现在的名字——胜利广场。</p>`,
             brandenburg: `<p>现在您面前的是加里宁格勒的勃兰登堡门——为数不多至今仍在履行其原始功能的城门之一。</p><p>如今，城门内设有一座介绍杏仁糖历史的博物馆。</p>`
         };
@@ -212,7 +214,6 @@
             markers.forEach(p => { L.marker(p.coords).addTo(foodMap).bindPopup(`<b>${p.name}</b>`); });
         }
 
-        // Фильтры еды
         document.getElementById('foodFilters').addEventListener('click', e => {
             if (!e.target.classList.contains('food-filter')) return;
             document.querySelectorAll('.food-filter').forEach(b => b.classList.remove('active'));
