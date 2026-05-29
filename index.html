@@ -31,7 +31,9 @@
         .map-links { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
         .map-link { flex: 1; min-width: 100px; text-align: center; background: #fff; color: #780513; border: 1px solid #780513; padding: 8px 6px; border-radius: 8px; font-size: 12px; text-decoration: none; font-weight: 600; }
         #placeMap { height: 200px; border-radius: 12px; border: 2px solid #780513; margin-bottom: 10px; }
-        .subtitles { font-size: 13px; line-height: 1.8; max-height: 200px; overflow-y: auto; padding-right: 5px; }
+        .subtitles { font-size: 13px; line-height: 1.8; max-height: 250px; overflow-y: auto; padding-right: 5px; background: #fff; border-radius: 12px; padding: 15px; }
+        .subtitles p { margin-bottom: 10px; }
+        .loading { text-align: center; color: #999; padding: 20px; }
         .food-btn { width: 100%; background: #780513; color: #e2d9bc; border: none; padding: 14px; font-family: 'Stalinist One', cursive; font-size: 16px; border-radius: 12px; cursor: pointer; margin-bottom: 5px; }
         .food-content { display: none; margin-bottom: 20px; }
         .food-content.show { display: block; }
@@ -55,27 +57,32 @@
         <p class="route-label">🗺️ 路线 — 加里宁格勒市中心</p>
 
         <div class="slider-container" id="slider">
-            <div class="slide active" data-coords="54.706555,20.513002" data-title="康德墓" data-addr="ул. Канта, 1" data-subs="kant">
+            <!-- Слайд 1: Кант -->
+            <div class="slide active" data-coords="54.706555,20.513002" data-title="康德墓" data-addr="ул. Канта, 1" data-subs="111.txt">
                 <img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/11.jpg" alt="康德墓">
                 <h2>康德墓</h2>
                 <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/1.mp3" type="audio/mpeg"></audio></div>
             </div>
-            <div class="slide" data-coords="54.706455,20.511073" data-title="大教堂" data-addr="ул. Канта, 1" data-subs="sobor">
+            <!-- Слайд 2: Собор -->
+            <div class="slide" data-coords="54.706455,20.511073" data-title="大教堂" data-addr="ул. Канта, 1" data-subs="222.txt">
                 <img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/22.jpg" alt="大教堂">
                 <h2>大教堂</h2>
                 <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/2.mp3" type="audio/mpeg"></audio></div>
             </div>
-            <div class="slide" data-coords="54.702810,20.515228" data-title="渔村" data-addr="Октябрьская ул., 8" data-subs="rybnaya">
+            <!-- Слайд 3: Рыбная -->
+            <div class="slide" data-coords="54.702810,20.515228" data-title="渔村" data-addr="Октябрьская ул., 8" data-subs="333.txt">
                 <img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/33.jpg" alt="渔村">
                 <h2>渔村</h2>
                 <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/3.mp3" type="audio/mpeg"></audio></div>
             </div>
-            <div class="slide" data-coords="54.719794,20.500803" data-title="胜利广场" data-addr="площадь Победы" data-subs="pobedy">
+            <!-- Слайд 4: Победы -->
+            <div class="slide" data-coords="54.719794,20.500803" data-title="胜利广场" data-addr="площадь Победы" data-subs="444.txt">
                 <img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/44.jpg" alt="胜利广场">
                 <h2>胜利广场</h2>
                 <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/4.mp3" type="audio/mpeg"></audio></div>
             </div>
-            <div class="slide" data-coords="54.697271,20.494982" data-title="勃兰登堡门" data-addr="ул. Багратиона, 137" data-subs="brandenburg">
+            <!-- Слайд 5: Бранденбург -->
+            <div class="slide" data-coords="54.697271,20.494982" data-title="勃兰登堡门" data-addr="ул. Багратиона, 137" data-subs="555.txt">
                 <img src="https://github.com/brunnerka-star/audiokaliningrad/raw/0c607dc2401beee9ed67797b7c774f16e95d36ad/55.png" alt="勃兰登堡门">
                 <h2>勃兰登堡门</h2>
                 <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/5.mp3" type="audio/mpeg"></audio></div>
@@ -96,7 +103,7 @@
                 <a class="map-link" id="amapLink" href="#" target="_blank">📍 高德地图 (Amap)</a>
             </div>
             <div id="placeMap"></div>
-            <div class="subtitles" id="subtitlesBox"></div>
+            <div class="subtitles" id="subtitlesBox"><p class="loading">加载中...</p></div>
         </div>
 
         <button class="food-btn" onclick="toggleFood()">🍴 哪里好吃？</button>
@@ -121,14 +128,6 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        const subsData = {
-            kant: `<p>今天，您来到了最具历史意义的地标之一——伊曼努尔·康德墓，这位哲学家的名字几乎全世界都知道。</p><p>正是在这里，1724年，伊曼努尔·康德出生了。他终其一生几乎从未离开过家乡，却创作了永远改变哲学的著作。</p><p>感谢您参观此地。</p>`,
-            sobor: `<p>现在您位于加里宁格勒的主要标志之一——柯尼斯堡大教堂旁。这不仅是一座古老的建筑，更是这座城市真正的心脏。</p><p>大教堂的建设大约始于1333年。大教堂与伊曼努尔·康德的名字紧密相连。</p>`,
-            rybnaya: `<p>现在您位于现代加里宁格勒最受欢迎的地方之一——渔村。这个地方常被称为"明信片上的加里宁格勒"。</p><p>如今，渔村是一个文化旅游中心。</p>`,
-            pobedy: `<p>您现在位于现代加里宁格勒的正中心——胜利广场。这是城市的主要广场。</p><p>在柯尼斯堡时代，广场被称为汉萨广场。战后，它获得了现在的名字——胜利广场。</p>`,
-            brandenburg: `<p>现在您面前的是加里宁格勒的勃兰登堡门——为数不多至今仍在履行其原始功能的城门之一。</p><p>如今，城门内设有一座介绍杏仁糖历史的博物馆。</p>`
-        };
-
         const foodPlaces = {
             bakery: [
                 { name: 'Königsbäcker (Гюго)', coords: [54.715, 20.510] },
@@ -152,7 +151,6 @@
 
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
-        const counter = document.getElementById('counter');
         let placeMap, foodMap;
         let expandOpen = false, foodOpen = false;
 
@@ -160,7 +158,7 @@
             slides[currentSlide].classList.remove('active');
             currentSlide = (n + slides.length) % slides.length;
             slides[currentSlide].classList.add('active');
-            counter.textContent = `${currentSlide + 1} / ${slides.length}`;
+            document.getElementById('counter').textContent = `${currentSlide + 1} / ${slides.length}`;
             if (expandOpen) updateExpandContent();
         }
         function nextSlide() { showSlide(currentSlide + 1); }
@@ -184,10 +182,24 @@
             const coords = slide.dataset.coords.split(',');
             const title = slide.dataset.title;
             const addr = slide.dataset.addr;
+            const subsFile = slide.dataset.subs;
+
             document.getElementById('addressBox').innerHTML = `<strong>${title}</strong><br>📌 ${addr}<br>📍 坐标：${coords[0]}, ${coords[1]}`;
-            document.getElementById('subtitlesBox').innerHTML = subsData[slide.dataset.subs] || '';
+            document.getElementById('subtitlesBox').innerHTML = '<p class="loading">加载中...</p>';
             document.getElementById('yandexLink').href = `https://yandex.ru/maps/?ll=${coords[1]},${coords[0]}&z=16&pt=${coords[1]},${coords[0]}`;
             document.getElementById('amapLink').href = `https://uri.amap.com/marker?position=${coords[1]},${coords[0]}&name=${encodeURIComponent(title)}`;
+
+            const rawUrl = `https://raw.githubusercontent.com/brunnerka-star/audiokaliningrad/main/${subsFile}`;
+            fetch(rawUrl)
+                .then(r => r.text())
+                .then(text => {
+                    const html = text.split('\n').filter(line => line.trim()).map(line => `<p>${line}</p>`).join('');
+                    document.getElementById('subtitlesBox').innerHTML = html || '<p>暂无字幕</p>';
+                })
+                .catch(() => {
+                    document.getElementById('subtitlesBox').innerHTML = '<p>字幕暂时不可用。</p>';
+                });
+
             if (placeMap) placeMap.remove();
             placeMap = L.map('placeMap').setView([+coords[0], +coords[1]], 16);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(placeMap);
