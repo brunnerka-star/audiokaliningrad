@@ -10,67 +10,37 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Open Sans', sans-serif; background-color: #e2d9bc; color: #333; min-height: 100vh; }
         .container { max-width: 500px; margin: 0 auto; padding: 15px; }
-
-        h1 {
-            font-family: 'Stalinist One', cursive; color: #780513;
-            text-align: center; font-size: 22px; margin-bottom: 5px;
-        }
+        h1 { font-family: 'Stalinist One', cursive; color: #780513; text-align: center; font-size: 22px; margin-bottom: 5px; }
         .subtitle { text-align: center; color: #780513; font-size: 13px; margin-bottom: 15px; }
-
-        /* Слайдер */
         .slider-container { position: relative; margin-bottom: 10px; }
         .slide { display: none; }
         .slide.active { display: block; }
-        .slide img { width: 100%; height: 220px; object-fit: cover; border-radius: 16px; border: 2px solid #780513; }
-        .slide h2 {
-            font-family: 'Stalinist One', cursive; color: #780513;
-            font-size: 18px; text-align: center; margin: 10px 0 5px;
+        .slide img {
+            width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+            border-radius: 16px; border: 2px solid #780513;
         }
-
-        /* Аудио */
+        .slide h2 { font-family: 'Stalinist One', cursive; color: #780513; font-size: 18px; text-align: center; margin: 10px 0 5px; }
         .audio-box { background: #fff; border-radius: 12px; padding: 12px; margin: 10px 0; box-shadow: 0 2px 8px rgba(120,5,19,0.1); }
         audio { width: 100%; }
-
-        /* Кнопки навигации */
         .nav-btns { display: flex; justify-content: space-between; align-items: center; margin: 5px 0 15px; }
-        .nav-btn {
-            background: #780513; color: #e2d9bc; border: none;
-            font-size: 20px; padding: 8px 16px; border-radius: 10px; cursor: pointer;
-            font-family: 'Stalinist One', cursive;
-        }
+        .nav-btn { background: #780513; color: #e2d9bc; border: none; font-size: 20px; padding: 8px 16px; border-radius: 10px; cursor: pointer; font-family: 'Stalinist One', cursive; }
         .slide-counter { font-size: 13px; color: #780513; font-weight: 600; }
-
-        /* Разворачиваемая секция */
-        .expand-btn {
-            width: 100%; background: #fff; color: #780513;
-            border: 2px solid #780513; padding: 12px; font-size: 14px;
-            border-radius: 12px; cursor: pointer; margin-bottom: 5px; font-weight: 600;
-        }
+        .expand-btn { width: 100%; background: #fff; color: #780513; border: 2px solid #780513; padding: 12px; font-size: 14px; border-radius: 12px; cursor: pointer; margin-bottom: 5px; font-weight: 600; }
         .expand-content { display: none; margin-bottom: 15px; }
         .expand-content.show { display: block; }
-
         .info-box { background: #fff; border-radius: 12px; padding: 15px; margin-bottom: 10px; box-shadow: 0 2px 8px rgba(120,5,19,0.08); font-size: 13px; line-height: 1.6; }
         .info-box strong { color: #780513; }
-
+        .map-links { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+        .map-link { flex: 1; min-width: 100px; text-align: center; background: #fff; color: #780513; border: 1px solid #780513; padding: 8px 6px; border-radius: 8px; font-size: 12px; text-decoration: none; font-weight: 600; }
         #placeMap { height: 200px; border-radius: 12px; border: 2px solid #780513; margin-bottom: 10px; }
-
         .subtitles { font-size: 13px; line-height: 1.8; max-height: 200px; overflow-y: auto; padding-right: 5px; }
-
-        /* Кнопка Где поесть */
-        .food-btn {
-            width: 100%; background: #780513; color: #e2d9bc;
-            border: none; padding: 14px; font-family: 'Stalinist One', cursive;
-            font-size: 16px; border-radius: 12px; cursor: pointer; margin-bottom: 5px;
-        }
+        .food-btn { width: 100%; background: #780513; color: #e2d9bc; border: none; padding: 14px; font-family: 'Stalinist One', cursive; font-size: 16px; border-radius: 12px; cursor: pointer; margin-bottom: 5px; }
         .food-content { display: none; margin-bottom: 20px; }
         .food-content.show { display: block; }
-
         .food-category { margin-bottom: 12px; }
         .food-category h3 { color: #780513; font-size: 15px; margin-bottom: 6px; }
         .food-category p { font-size: 13px; margin: 2px 0; padding-left: 10px; }
-
         #foodMap { height: 250px; border-radius: 12px; border: 2px solid #780513; margin-top: 10px; }
-
         .site-link { text-align: center; margin: 15px 0; }
         .site-link a { color: #780513; font-weight: 600; text-decoration: underline; font-size: 13px; }
         .footer { text-align: center; font-size: 11px; color: #999; padding-top: 15px; border-top: 1px solid #78051333; margin-top: 10px; }
@@ -81,112 +51,79 @@
         <h1>Weishi Tour</h1>
         <p class="subtitle">加里宁格勒 · 你的个人音频导游</p>
 
-        <!-- Слайдер -->
         <div class="slider-container" id="slider">
-            <!-- Слайд 1 -->
-            <div class="slide active" data-map-coords="54.706555,20.513002" data-map-title="康德墓" data-map-addr="ул. Канта, 1">
+            <!-- Слайд 1: Кант -->
+            <div class="slide active" data-coords="54.706555,20.513002" data-title="康德墓" data-addr="ул. Канта, 1" data-subs="kant">
                 <img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/11.jpg" alt="康德墓">
                 <h2>康德墓</h2>
-                <div class="audio-box">
-                    <audio controls controlsList="nodownload">
-                        <source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/1.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                <div class="subs" style="display:none;"><p>今天，您来到了最具历史意义的地标之一——伊曼努尔·康德墓，这位哲学家的名字几乎全世界都知道。即使一个人从未研究过哲学，也极有可能听说过伊曼努尔·康德这个名字。对于加里宁格勒来说，康德不仅仅是一位历史人物，他更是这座城市的象征，是它的文化记忆，也是连接现代加里宁格勒与老柯尼斯堡的纽带。</p><p>在我们介绍这座纪念建筑本身之前，值得先想象一下康德时代的城市风貌。那时，加里宁格勒被称为柯尼斯堡，是东普鲁士的首府。它是一座欧洲大城，拥有大学、图书馆、科学协会和活跃的知识生活。商贸通道穿港而过，学者和旅行者云集于此，而这座城市本身也被视为18世纪重要的启蒙运动中心之一。</p><p>正是在这里，1724年，伊曼努尔·康德出生了。他的家境相当清贫。父亲是一名手艺人——制作马具的工匠，而母亲则非常重视孩子们的教育。尽管生活不富裕，康德还是接受了良好的教育，并进入了当时就位于柯尼斯堡的"阿尔贝蒂娜"大学。</p><p>有趣的是，康德终其一生几乎从未离开过自己的家乡。以现代的眼光来看，这很不可思议：一个其思想影响了整个世界的人，却几乎没有旅行过。然而，正是在柯尼斯堡，他创作了那些永远改变了哲学的著作。</p><p>康德生活在启蒙时代——一个人开始特别珍视理性、科学和人独立思考能力的时期。他试图回答那些困扰人类几个世纪的问题：人能知道什么？什么是道德？为什么人能区分善恶？人在自己的行为中是自由的吗？</p><p>他最著名的著作——《纯粹理性批判》，被认为是欧洲历史上最重要的哲学书籍之一。康德断言，人并非直接感知世界，而是通过自身的意识来感知。换句话说，我们的理性本身参与创造了我们周围所见的图景。这些思想后来不仅影响了哲学，也影响了心理学、科学乃至艺术。</p><p>但康德不仅作为一位深奥的思想家被人们铭记，对许多人来说，他还是惊人自律的典范。有一个关于他每日散步的著名故事。每天，差不多在同一时间，这位哲学家便会出门，到柯尼斯堡的街上散步。市民们对他的准时习以为常，以至于开玩笑说：可以照着康德来对表。</p><p>他的生活非常有规律，安排得极为严谨。清晨早起，在大学讲课，撰写自己的著作，午餐时接待客人，并且一定会去散步。与此同时，康德完全不是一个孤僻的人——同时代的人回忆他是位风趣幽默、颇有意思的对话者。</p><p>现在，请注意您面前的这座纪念建筑。康德墓位于柯尼斯堡大教堂的墙边，这座大教堂是该市的主要标志之一。最初，这位哲学家于1804年被安葬在教堂内部。然而随着时间的推移，安葬地点几经变迁，而现代的纪念建筑直到1924年，也就是康德诞辰200周年时才出现。</p><p>纪念建筑呈现出严谨、克制的风格。这里的建筑并非偶然：它体现了在启蒙运动哲学中至关重要的秩序、和谐与理性的理念。您可以看到深色的石柱和敞开式的厚重柱廊。一切看上去既庄重又宁静——毫无多余的奢华。</p><p>第二次世界大战期间，柯尼斯堡遭受了严重破坏。1944年，该市遭到英国空军的轰炸，随后又经历了残酷的战斗。历史中心的大部分地区被摧毁。柯尼斯堡大教堂沦为废墟，几十年来一直是断壁残垣。</p><p>然而，康德墓却令人惊奇地得以幸存。这一直被称作是一个具有象征意义的事件。有一个广为流传的城市传说称，苏联士兵出于对这位伟大哲学家的尊敬，特意没有破坏这处纪念建筑。历史学家们对细节存有争议，但事实终究是事实：康德的安葬之地历经战争得以保存，并成为老柯尼斯堡为数不多幸存下来的部分。</p><p>战后，该市被划归苏联，并获得了新的名字——加里宁格勒。那段德国往事在很长时间里几乎不被提起，然而康德这一形象始终是一个例外。即便在苏联时期，他也被认为是一位具有世界意义的思想家，而他的墓地也逐渐成为一处重要的历史遗址。</p><p>今天，您所在的这座岛被命名为康德岛。这里是加里宁格勒最具氛围感的地方之一。城市居民常来此散步，举办音乐会、节日庆典及文化活动。旁边便是修复后的柯尼斯堡大教堂，教堂内设有一座博物馆，专门纪念这位哲学家以及柯尼斯堡的历史。</p><p>如果走近纪念建筑，您会看到康德那句著名的格言："有两样东西，人们越是经常持久地对之凝神思索，它们就越是使内心充满常新而日增的惊奇和敬畏：我头上的星空和我心中的道德律。"</p><p>这句话被认为是康德全部哲学的简要表达。他坚信，人不应该仅仅为了自己的欲望而活，还应遵循内心的道德律——即良知和对他人的责任感。</p><p>有趣的是，康德思想的影响远远超出了哲学领域。他的著作被作家、科学家、政治思想家乃至物理学家所研究。许多关于人权、个人自由及人的尊严价值的现代观念，都部分地脱胎于康德所属的启蒙时代的思想。</p><p>对于加里宁格勒的居民来说，这个地方之所以具有特殊意义，还因为它连接了该市历史的不同时代。在这里，柯尼斯堡的德国往昔、苏联历史与现代俄罗斯文化交汇。正因如此，康德墓不仅仅是一个旅游景点，更成为了记忆与传承的真正象征。</p><p>如今，有来自世界各地的游客到此参观：来自德国、中国、日本、法国及许多其他国家。对于一些人来说，这是接触哲学史的机会；对另一些人来说，这是感受古老欧洲城市氛围的契机；还有些人来这里，只是为了享受这里的宁静与独特的寂静。</p><p>如果您在此驻足片刻，就会发现周围的声音有多么不寻常地组合在一起：城市的喧嚣、大教堂的钟声、游客的脚步声，以及这座岛的静谧。或许，正是在这里，最能深刻地感受到康德终其一生试图传达的思想：人应当能够独立思考，探寻意义，并且不要害怕对世界、对自身提出问题。</p><p>感谢您参观此地。继续沿着康德岛和加里宁格勒漫步，您将看到这座城市错综复杂、多重层次的历史痕迹——在这一历史中，过去与现在继续并肩共存。</p></div>
+                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/1.mp3" type="audio/mpeg"></audio></div>
             </div>
-            <!-- Слайд 2 -->
-            <div class="slide" data-map-coords="54.706455,20.511073" data-map-title="大教堂" data-map-addr="ул. Канта, 1">
+            <!-- Слайд 2: Собор -->
+            <div class="slide" data-coords="54.706455,20.511073" data-title="大教堂" data-addr="ул. Канта, 1" data-subs="sobor">
                 <img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/22.jpg" alt="大教堂">
                 <h2>大教堂</h2>
-                <div class="audio-box">
-                    <audio controls controlsList="nodownload">
-                        <source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/2.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                <div class="subs" style="display:none;"><p>现在您位于加里宁格勒的主要标志之一——柯尼斯堡大教堂旁。这不仅是一座古老的建筑，更是这座城市真正的心脏，一个中世纪柯尼斯堡的历史、战争的悲剧以及加里宁格勒现代文化生活交织在一起的地方。</p></div>
+                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/2.mp3" type="audio/mpeg"></audio></div>
             </div>
-            <!-- Слайд 3 -->
-            <div class="slide" data-map-coords="54.702810,20.515228" data-map-title="渔村" data-map-addr="Октябрьская ул., 8">
+            <!-- Слайд 3: Рыбная -->
+            <div class="slide" data-coords="54.702810,20.515228" data-title="渔村" data-addr="Октябрьская ул., 8" data-subs="rybnaya">
                 <img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/33.jpg" alt="渔村">
                 <h2>渔村</h2>
-                <div class="audio-box">
-                    <audio controls controlsList="nodownload">
-                        <source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/3.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                <div class="subs" style="display:none;"><p>现在您位于现代加里宁格勒最受欢迎、最易辨认的地方之一——渔村。这个地方常被称为"明信片上的加里宁格勒"。</p></div>
+                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/3.mp3" type="audio/mpeg"></audio></div>
             </div>
-            <!-- Слайд 4 -->
-            <div class="slide" data-map-coords="54.719794,20.500803" data-map-title="胜利广场" data-map-addr="площадь Победы">
+            <!-- Слайд 4: Победы -->
+            <div class="slide" data-coords="54.719794,20.500803" data-title="胜利广场" data-addr="площадь Победы" data-subs="pobedy">
                 <img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/44.jpg" alt="胜利广场">
                 <h2>胜利广场</h2>
-                <div class="audio-box">
-                    <audio controls controlsList="nodownload">
-                        <source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/4.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                <div class="subs" style="display:none;"><p>您现在位于现代加里宁格勒的正中心——胜利广场。这是城市的主要广场，一个能特别清晰地看到加里宁格勒在20世纪和21世纪如何变迁的地方。</p></div>
+                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/4.mp3" type="audio/mpeg"></audio></div>
             </div>
-            <!-- Слайд 5 -->
-            <div class="slide" data-map-coords="54.697271,20.494982" data-map-title="勃兰登堡门" data-map-addr="ул. Багратиона, 137">
+            <!-- Слайд 5: Бранденбург -->
+            <div class="slide" data-coords="54.697271,20.494982" data-title="勃兰登堡门" data-addr="ул. Багратиона, 137" data-subs="brandenburg">
                 <img src="https://github.com/brunnerka-star/audiokaliningrad/raw/0c607dc2401beee9ed67797b7c774f16e95d36ad/55.png" alt="勃兰登堡门">
                 <h2>勃兰登堡门</h2>
-                <div class="audio-box">
-                    <audio controls controlsList="nodownload">
-                        <source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/5.mp3" type="audio/mpeg">
-                    </audio>
-                </div>
-                <div class="subs" style="display:none;"><p>现在您面前的是加里宁格勒的勃兰登堡门——加里宁格勒为数不多至今仍在履行其原始功能的城门之一。如同几十年前一样，道路依然穿门而过，车辆依然川流不息。</p></div>
+                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/5.mp3" type="audio/mpeg"></audio></div>
             </div>
         </div>
 
-        <!-- Навигация -->
         <div class="nav-btns">
             <button class="nav-btn" onclick="prevSlide()">◀</button>
             <span class="slide-counter" id="counter">1 / 5</span>
             <button class="nav-btn" onclick="nextSlide()">▶</button>
         </div>
 
-        <!-- Разворачиваемая секция с адресом, картой и субтитрами -->
         <button class="expand-btn" onclick="toggleExpand()">📍 地址、地图与字幕 ▼</button>
         <div class="expand-content" id="expandContent">
             <div class="info-box" id="addressBox"></div>
+            <div class="map-links">
+                <a class="map-link" id="yandexLink" href="#" target="_blank">🗺️ Яндекс.Карты</a>
+                <a class="map-link" id="amapLink" href="#" target="_blank">📍 高德地图 (Amap)</a>
+            </div>
             <div id="placeMap"></div>
             <div class="subtitles" id="subtitlesBox"></div>
         </div>
 
-        <!-- Кнопка Где поесть -->
         <button class="food-btn" onclick="toggleFood()">🍴 哪里好吃？</button>
         <div class="food-content" id="foodContent">
-            <div class="food-category"><h3>🥖 Пекарни 面包店</h3>
-                <p><strong>Königsbäcker</strong> — ул. Виктора Гюго, 1</p>
-                <p><strong>Königsbäcker</strong> — ул. Черняховского, 6А</p>
-                <p><strong>Лев Бородинский</strong> — Октябрьская ул., 2/3</p>
-                <p><strong>Лев Бородинский</strong> — ул. Черняховского, 7</p>
-            </div>
-            <div class="food-category"><h3>🥡 Азиатская кухня 亚洲菜</h3>
-                <p><strong>Kono</strong> — Ленинский просп., 35-37</p>
-                <p><strong>Фьюжн Экспресс</strong> — Ленинский просп., 2</p>
-            </div>
-            <div class="food-category"><h3>🍲 Русско-европейская кухня 俄罗斯-欧洲菜</h3>
-                <p><strong>Поварешка</strong> — просп. Мира, 61</p>
-                <p><strong>Брикас</strong> — Театральная ул., 30</p>
-            </div>
-            <div class="food-category"><h3>🍕 Пиццерии и бургерные 披萨和汉堡</h3>
-                <p><strong>Вкусно и точка</strong> — Театральная ул., 30</p>
-                <p><strong>Додо</strong> — Советский просп., 1</p>
-            </div>
+            <div class="food-category"><h3>🥖 Пекарни 面包店</h3><p><strong>Königsbäcker</strong> — ул. Виктора Гюго, 1</p><p><strong>Königsbäcker</strong> — ул. Черняховского, 6А</p><p><strong>Лев Бородинский</strong> — Октябрьская ул., 2/3</p><p><strong>Лев Бородинский</strong> — ул. Черняховского, 7</p></div>
+            <div class="food-category"><h3>🥡 Азиатская кухня 亚洲菜</h3><p><strong>Kono</strong> — Ленинский просп., 35-37</p><p><strong>Фьюжн Экспресс</strong> — Ленинский просп., 2</p></div>
+            <div class="food-category"><h3>🍲 Русско-европейская кухня 俄罗斯-欧洲菜</h3><p><strong>Поварешка</strong> — просп. Мира, 61</p><p><strong>Брикас</strong> — Театральная ул., 30</p></div>
+            <div class="food-category"><h3>🍕 Пиццерии и бургерные 披萨和汉堡</h3><p><strong>Вкусно и точка</strong> — Театральная ул., 30</p><p><strong>Додо</strong> — Советский просп., 1</p></div>
             <div id="foodMap"></div>
         </div>
 
-        <div class="site-link">
-            <a href="https://weishitour.tilda.ws/" target="_blank">🌐 我们的完整网站 → WeishiTour.tilda.ws</a>
-        </div>
-        <div class="footer">© 2025 Weishi Tour. 加里宁格勒 · Калининград</div>
+        <div class="site-link"><a href="https://weishitour.tilda.ws/" target="_blank">🌐 我们的完整网站 → WeishiTour.tilda.ws</a></div>
+        <div class="footer">© 2026 Weishi Tour. 加里宁格勒 · Калининград</div>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
+        const subsData = {
+            kant: `<p>今天，您来到了最具历史意义的地标之一——伊曼努尔·康德墓，这位哲学家的名字几乎全世界都知道。即使一个人从未研究过哲学，也极有可能听说过伊曼努尔·康德这个名字。对于加里宁格勒来说，康德不仅仅是一位历史人物，他更是这座城市的象征，是它的文化记忆，也是连接现代加里宁格勒与老柯尼斯堡的纽带。</p><p>在我们介绍这座纪念建筑本身之前，值得先想象一下康德时代的城市风貌。那时，加里宁格勒被称为柯尼斯堡，是东普鲁士的首府。它是一座欧洲大城，拥有大学、图书馆、科学协会和活跃的知识生活。</p><p>正是在这里，1724年，伊曼努尔·康德出生了。他的家境相当清贫。父亲是一名手艺人——制作马具的工匠，而母亲则非常重视孩子们的教育。尽管生活不富裕，康德还是接受了良好的教育，并进入了当时就位于柯尼斯堡的"阿尔贝蒂娜"大学。</p><p>有趣的是，康德终其一生几乎从未离开过自己的家乡。以现代的眼光来看，这很不可思议：一个其思想影响了整个世界的人，却几乎没有旅行过。然而，正是在柯尼斯堡，他创作了那些永远改变了哲学的著作。</p><p>康德生活在启蒙时代——一个人开始特别珍视理性、科学和人独立思考能力的时期。他试图回答那些困扰人类几个世纪的问题：人能知道什么？什么是道德？为什么人能区分善恶？人在自己的行为中是自由的吗？</p><p>他最著名的著作——《纯粹理性批判》，被认为是欧洲历史上最重要的哲学书籍之一。</p><p>如今，有来自世界各地的游客到此参观：来自德国、中国、日本、法国及许多其他国家。对于一些人来说，这是接触哲学史的机会；对另一些人来说，这是感受古老欧洲城市氛围的契机；还有些人来这里，只是为了享受这里的宁静与独特的寂静。</p><p>如果您在此驻足片刻，就会发现周围的声音有多么不寻常地组合在一起：城市的喧嚣、大教堂的钟声、游客的脚步声，以及这座岛的静谧。或许，正是在这里，最能深刻地感受到康德终其一生试图传达的思想：人应当能够独立思考，探寻意义，并且不要害怕对世界、对自身提出问题。</p><p>感谢您参观此地。继续沿着康德岛和加里宁格勒漫步，您将看到这座城市错综复杂、多重层次的历史痕迹——在这一历史中，过去与现在继续并肩共存。</p>`,
+            sobor: `<p>现在您位于加里宁格勒的主要标志之一——柯尼斯堡大教堂旁。这不仅是一座古老的建筑，更是这座城市真正的心脏。</p><p>大教堂的建设大约始于1333年，时值条顿骑士团时期。大教堂由砖块砌成，采用的是所谓的波罗的哥特式风格。</p><p>大教堂与伊曼努尔·康德的名字紧密相连。这位伟大的哲学家曾是阿尔贝蒂娜大学的教授，并经常来此。他于1804年去世后，被安葬在大教堂旁边。</p>`,
+            rybnaya: `<p>现在您位于现代加里宁格勒最受欢迎、最易辨认的地方之一——渔村。这个地方常被称为"明信片上的加里宁格勒"。</p><p>乍一看，渔村可能像是一个从柯尼斯堡时代保留下来的古老历史街区。但实际上，这是一个建于21世纪的相对现代的综合性建筑群。</p><p>如今，渔村是一个文化旅游中心。这里汇聚了餐厅、酒店、纪念品商店、咖啡馆和休闲步道区。</p>`,
+            pobedy: `<p>您现在位于现代加里宁格勒的正中心——胜利广场。这是城市的主要广场。</p><p>在柯尼斯堡时代，广场的面貌完全不同，被称为汉萨广场。20世纪初，这里是城市最繁华的地段之一。</p><p>战后，广场获得了现在的名字——胜利广场。它成了战争结束和城市新历史的象征。</p>`,
+            brandenburg: `<p>现在您面前的是加里宁格勒的勃兰登堡门——加里宁格勒为数不多至今仍在履行其原始功能的城门之一。</p><p>勃兰登堡门的历史始于17世纪。此处的第一座城门约在1657年出现，为木结构。</p><p>如今，城门内设有一座介绍杏仁糖历史的博物馆。杏仁糖是老柯尼斯堡的美食象征之一。</p>`
+        };
+
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const counter = document.getElementById('counter');
@@ -203,7 +140,6 @@
         function nextSlide() { showSlide(currentSlide + 1); }
         function prevSlide() { showSlide(currentSlide - 1); }
 
-        // Свайп
         let touchStartX = 0;
         document.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].screenX; });
         document.addEventListener('touchend', e => {
@@ -220,13 +156,16 @@
 
         function updateExpandContent() {
             const slide = slides[currentSlide];
-            const coords = slide.dataset.mapCoords.split(',');
-            const title = slide.dataset.mapTitle;
-            const addr = slide.dataset.mapAddr;
-            const subs = slide.querySelector('.subs').innerHTML;
+            const coords = slide.dataset.coords.split(',');
+            const title = slide.dataset.mapTitle || slide.dataset.title;
+            const addr = slide.dataset.addr;
+            const subsKey = slide.dataset.subs;
 
             document.getElementById('addressBox').innerHTML = `<strong>${title}</strong><br>📌 ${addr}<br>📍 坐标：${coords[0]}, ${coords[1]}`;
-            document.getElementById('subtitlesBox').innerHTML = subs;
+            document.getElementById('subtitlesBox').innerHTML = subsData[subsKey] || '';
+
+            document.getElementById('yandexLink').href = `https://yandex.ru/maps/?ll=${coords[1]},${coords[0]}&z=16&pt=${coords[1]},${coords[0]}`;
+            document.getElementById('amapLink').href = `https://uri.amap.com/marker?position=${coords[1]},${coords[0]}&name=${encodeURIComponent(title)}`;
 
             if (placeMap) placeMap.remove();
             placeMap = L.map('placeMap').setView([parseFloat(coords[0]), parseFloat(coords[1])], 16);
@@ -245,8 +184,7 @@
             if (foodMap) foodMap.remove();
             foodMap = L.map('foodMap').setView([54.710, 20.505], 13);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(foodMap);
-
-            const foodPlaces = [
+            [
                 { name: 'Königsbäcker', coords: [54.715, 20.510] },
                 { name: 'Лев Бородинский', coords: [54.708, 20.512] },
                 { name: 'Kono', coords: [54.712, 20.500] },
@@ -255,10 +193,7 @@
                 { name: 'Брикас', coords: [54.718, 20.500] },
                 { name: 'Вкусно и точка', coords: [54.718, 20.500] },
                 { name: 'Додо', coords: [54.725, 20.492] }
-            ];
-            foodPlaces.forEach(p => {
-                L.marker(p.coords).addTo(foodMap).bindPopup(`<b>${p.name}</b>`);
-            });
+            ].forEach(p => { L.marker(p.coords).addTo(foodMap).bindPopup(`<b>${p.name}</b>`); });
         }
     </script>
 </body>
