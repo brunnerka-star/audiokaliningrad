@@ -13,16 +13,12 @@
         h1 { font-family: 'Stalinist One', cursive; color: #780513; text-align: center; font-size: 22px; margin-bottom: 5px; }
         .subtitle { text-align: center; color: #780513; font-size: 13px; margin-bottom: 5px; }
         .watermark { text-align: center; font-size: 10px; color: #78051355; margin-bottom: 10px; }
-        .mascot { text-align: center; margin-bottom: 5px; }
-        .mascot img { height: 60px; }
-        .mascot-wink { text-align: center; margin-bottom: 10px; }
-        .mascot-wink img { height: 40px; }
-        .mascot-food { text-align: center; margin: 5px 0; }
-        .mascot-food img { height: 50px; }
-        .mascot-bow { text-align: center; margin-bottom: 5px; }
-        .mascot-bow img { height: 40px; }
+        .mascot { text-align: center; margin-bottom: 5px; } .mascot img { height: 60px; }
+        .mascot-wink { text-align: center; margin-bottom: 10px; } .mascot-wink img { height: 40px; }
+        .mascot-food { text-align: center; margin: 5px 0; } .mascot-food img { height: 50px; }
+        .mascot-bow { text-align: center; margin-bottom: 5px; } .mascot-bow img { height: 40px; }
         .route-tabs { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
-        .route-tab { flex: 1; min-width: 80px; padding: 8px 6px; border-radius: 10px; border: 1px solid #780513; background: #fff; color: #780513; font-size: 11px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s; }
+        .route-tab { flex: 1; min-width: 90px; padding: 8px 6px; border-radius: 10px; border: 1px solid #780513; background: #fff; color: #780513; font-size: 10px; cursor: pointer; font-weight: 600; text-align: center; transition: all 0.2s; line-height: 1.3; }
         .route-tab.active { background: #780513; color: #e2d9bc; }
         .slider-container { position: relative; margin-bottom: 10px; }
         .slide { display: none; }
@@ -69,89 +65,38 @@
     <div class="container" id="mainContent">
         <h1>Weishi Tour</h1>
         <p class="subtitle">加里宁格勒 · 你的个人音频导游</p>
-
-        <div class="mascot">
-            <img src="https://github.com/brunnerka-star/audiokaliningrad/raw/53bdec2cb817b996ac5609617ec50bbd9a3881cc/%D0%BF%D1%80%D1%8B%D0%B6%D0%BE%D0%BA.png" alt="маскот">
-        </div>
+        <div class="mascot"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/53bdec2cb817b996ac5609617ec50bbd9a3881cc/%D0%BF%D1%80%D1%8B%D0%B6%D0%BE%D0%BA.png" alt="маскот"></div>
 
         <div class="route-tabs" id="routeTabs">
-            <button class="route-tab active" data-route="kaliningrad">🗺️ Калининград</button>
-            <button class="route-tab" data-route="zelenogradsk">🐱 Зеленоградск</button>
-            <button class="route-tab" data-route="svetlogorsk">🌊 Светлогорск</button>
+            <button class="route-tab active" data-route="kaliningrad">🗺️ 路线 — 加里宁格勒市中心</button>
+            <button class="route-tab" data-route="zelenogradsk">🐱 路线 — 猫城 — 泽列诺格拉茨克</button>
+            <button class="route-tab" data-route="svetlogorsk">🌊 路线 — 有趣的斯韦特洛戈尔斯克</button>
         </div>
 
         <p class="watermark" id="watermarkText">🔒 个人授权 · 测试模式 · ID: TEST</p>
 
-        <!-- ===== Слайдер Калининград ===== -->
+        <!-- Калининград -->
         <div class="slider-container" id="slider-kaliningrad">
-            <div class="slide active" data-coords="54.706555,20.513002" data-title="康德墓" data-addr="ул. Канта, 1" data-subs="111.txt">
-                <div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/11.jpg" alt="康德墓" draggable="false"></div>
-                <h2>康德墓 <span>(Могила Канта)</span></h2>
-                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/1.mp3" type="audio/mpeg"></audio></div>
-            </div>
-            <div class="slide" data-coords="54.706455,20.511073" data-title="大教堂" data-addr="ул. Канта, 1" data-subs="222.txt">
-                <div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/22.jpg" alt="大教堂" draggable="false"></div>
-                <h2>大教堂 <span>(Кафедральный собор)</span></h2>
-                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/2.mp3" type="audio/mpeg"></audio></div>
-            </div>
-            <div class="slide" data-coords="54.702810,20.515228" data-title="渔村" data-addr="Октябрьская ул., 8" data-subs="333.txt">
-                <div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/33.jpg" alt="渔村" draggable="false"></div>
-                <h2>渔村 <span>(Рыбная деревня)</span></h2>
-                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/3.mp3" type="audio/mpeg"></audio></div>
-            </div>
-            <div class="slide" data-coords="54.719794,20.500803" data-title="胜利广场" data-addr="площадь Победы" data-subs="444.txt">
-                <div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/44.jpg" alt="胜利广场" draggable="false"></div>
-                <h2>胜利广场 <span>(Площадь Победы)</span></h2>
-                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/4.mp3" type="audio/mpeg"></audio></div>
-            </div>
-            <div class="slide" data-coords="54.697271,20.494982" data-title="勃兰登堡门" data-addr="ул. Багратиона, 137" data-subs="555.txt">
-                <div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/0c607dc2401beee9ed67797b7c774f16e95d36ad/55.png" alt="勃兰登堡门" draggable="false"></div>
-                <h2>勃兰登堡门 <span>(Бранденбургские ворота)</span></h2>
-                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/5.mp3" type="audio/mpeg"></audio></div>
-            </div>
-            <div class="slide" data-coords="54.713712,20.535706" data-title="皇家门" data-addr="ул. Фрунзе, 112" data-subs="666.txt">
-                <div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/66.jpg" alt="皇家门" draggable="false"></div>
-                <h2>皇家门 <span>(Королевские ворота)</span></h2>
-                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/6.mp3" type="audio/mpeg"></audio></div>
-            </div>
-            <div class="slide" data-coords="54.657907,20.565278" data-title="11号堡垒" data-addr="Московский район" data-subs="777.txt">
-                <div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/77.jpg" alt="11号堡垒" draggable="false"></div>
-                <h2>11号堡垒 «邓霍夫» <span>(Форт №11 «Дёнхов»)</span></h2>
-                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/7.mp3" type="audio/mpeg"></audio></div>
-            </div>
+            <div class="slide active" data-coords="54.706555,20.513002" data-title="康德墓" data-addr="ул. Канта, 1" data-subs="111.txt"><div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/11.jpg" draggable="false"></div><h2>康德墓 <span>(Могила Канта)</span></h2><div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/1.mp3" type="audio/mpeg"></audio></div></div>
+            <div class="slide" data-coords="54.706455,20.511073" data-title="大教堂" data-addr="ул. Канта, 1" data-subs="222.txt"><div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/22.jpg" draggable="false"></div><h2>大教堂 <span>(Кафедральный собор)</span></h2><div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/2.mp3" type="audio/mpeg"></audio></div></div>
+            <div class="slide" data-coords="54.702810,20.515228" data-title="渔村" data-addr="Октябрьская ул., 8" data-subs="333.txt"><div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/33.jpg" draggable="false"></div><h2>渔村 <span>(Рыбная деревня)</span></h2><div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/3.mp3" type="audio/mpeg"></audio></div></div>
+            <div class="slide" data-coords="54.719794,20.500803" data-title="胜利广场" data-addr="площадь Победы" data-subs="444.txt"><div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/44.jpg" draggable="false"></div><h2>胜利广场 <span>(Площадь Победы)</span></h2><div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/4.mp3" type="audio/mpeg"></audio></div></div>
+            <div class="slide" data-coords="54.697271,20.494982" data-title="勃兰登堡门" data-addr="ул. Багратиона, 137" data-subs="555.txt"><div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/0c607dc2401beee9ed67797b7c774f16e95d36ad/55.png" draggable="false"></div><h2>勃兰登堡门 <span>(Бранденбургские ворота)</span></h2><div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/e3f7c156639011905b88c4d1d08a3cb2eed6736c/5.mp3" type="audio/mpeg"></audio></div></div>
+            <div class="slide" data-coords="54.713712,20.535706" data-title="皇家门" data-addr="ул. Фрунзе, 112" data-subs="666.txt"><div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/66.jpg" draggable="false"></div><h2>皇家门 <span>(Королевские ворота)</span></h2><div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/6.mp3" type="audio/mpeg"></audio></div></div>
+            <div class="slide" data-coords="54.657907,20.565278" data-title="11号堡垒" data-addr="Московский район" data-subs="777.txt"><div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/77.jpg" draggable="false"></div><h2>11号堡垒 «邓霍夫» <span>(Форт №11 «Дёнхов»)</span></h2><div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/7.mp3" type="audio/mpeg"></audio></div></div>
         </div>
 
-        <!-- ===== Слайдер Зеленоградск ===== -->
+        <!-- Зеленоградск -->
         <div class="slider-container" id="slider-zelenogradsk" style="display:none;">
-            <div class="slide active" data-coords="54.959956,20.475337" data-title="古斯塔夫疗养院" data-addr="Курортный просп., 28" data-subs="888.txt">
-                <div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/88.jpg" alt="疗养院" draggable="false"></div>
-                <h2>古斯塔夫·施塔克军事疗养院 <span>(Пансионат Г. Штарка)</span></h2>
-                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/8.mp3" type="audio/mpeg"></audio></div>
-            </div>
-            <div class="slide" data-coords="54.959941,20.475882" data-title="带药房的住宅楼" data-addr="Курортный просп., 27" data-subs="999.txt">
-                <div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/99.jpg" alt="住宅楼" draggable="false"></div>
-                <h2>带药房的住宅楼 <span>(Дом с аптекой)</span></h2>
-                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/9.mp3" type="audio/mpeg"></audio></div>
-            </div>
-            <div class="slide" data-coords="54.961356,20.477805" data-title="克兰茨疗养院" data-addr="Курортный просп., 16" data-subs="101010.txt">
-                <div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/1010.jpg" alt="疗养院" draggable="false"></div>
-                <h2>克兰茨疗养院 <span>(Курхаус Кранц)</span></h2>
-                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/10.mp3" type="audio/mpeg"></audio></div>
-            </div>
-            <div class="slide" data-coords="54.961326,20.479955" data-title="道德特之家" data-addr="Курортный просп., 7" data-subs="121212.txt">
-                <div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/1212.jpg" alt="道德特之家" draggable="false"></div>
-                <h2>道德特之家 <span>(Дом Даудерта)</span></h2>
-                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/12.mp3" type="audio/mpeg"></audio></div>
-            </div>
+            <div class="slide active" data-coords="54.959956,20.475337" data-title="古斯塔夫疗养院" data-addr="Курортный просп., 28" data-subs="888.txt"><div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/88.jpg" draggable="false"></div><h2>古斯塔夫·施塔克军事疗养院 <span>(Пансионат Г. Штарка)</span></h2><div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/8.mp3" type="audio/mpeg"></audio></div></div>
+            <div class="slide" data-coords="54.959941,20.475882" data-title="带药房的住宅楼" data-addr="Курортный просп., 27" data-subs="999.txt"><div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/99.jpg" draggable="false"></div><h2>带药房的住宅楼 <span>(Дом с аптекой)</span></h2><div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/9.mp3" type="audio/mpeg"></audio></div></div>
+            <div class="slide" data-coords="54.961356,20.477805" data-title="克兰茨疗养院" data-addr="Курортный просп., 16" data-subs="101010.txt"><div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/1010.jpg" draggable="false"></div><h2>克兰茨疗养院 <span>(Курхаус Кранц)</span></h2><div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/10.mp3" type="audio/mpeg"></audio></div></div>
+            <div class="slide" data-coords="54.961326,20.479955" data-title="道德特之家" data-addr="Курортный просп., 7" data-subs="121212.txt"><div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/1212.jpg" draggable="false"></div><h2>道德特之家 <span>(Дом Даудерта)</span></h2><div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/12.mp3" type="audio/mpeg"></audio></div></div>
         </div>
 
-        <!-- ===== Слайдер Светлогорск ===== -->
+        <!-- Светлогорск -->
         <div class="slider-container" id="slider-svetlogorsk" style="display:none;">
-            <div class="slide active" data-coords="54.943280,20.154343" data-title="水塔" data-addr="Октябрьская ул., 11" data-subs="111111.txt">
-                <div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/1111.jpg" alt="水塔" draggable="false"></div>
-                <h2>水塔 <span>(Водонапорная башня)</span></h2>
-                <div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/11.mp3" type="audio/mpeg"></audio></div>
-            </div>
+            <div class="slide active" data-coords="54.943280,20.154343" data-title="水塔" data-addr="Октябрьская ул., 11" data-subs="111111.txt"><div class="img-container" data-watermark="ID: TEST"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/1111.jpg" draggable="false"></div><h2>水塔 <span>(Водонапорная башня)</span></h2><div class="audio-box"><audio controls controlsList="nodownload"><source src="https://github.com/brunnerka-star/audiokaliningrad/raw/99038f19413510fc3c9cedd4896c95b9b2ff87ba/11.mp3" type="audio/mpeg"></audio></div></div>
         </div>
 
         <div class="nav-btns">
@@ -159,10 +104,7 @@
             <span class="slide-counter" id="counter">1 / 7</span>
             <button class="nav-btn" id="nextBtn">▶</button>
         </div>
-
-        <div class="mascot-wink">
-            <img src="https://github.com/brunnerka-star/audiokaliningrad/raw/53bdec2cb817b996ac5609617ec50bbd9a3881cc/%D0%BF%D0%BE%D0%B4%D0%BC%D0%B8%D0%B3%D0%B8%D0%B2%D0%B0%D0%B5%D1%82.png" alt="подмигивает">
-        </div>
+        <div class="mascot-wink"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/53bdec2cb817b996ac5609617ec50bbd9a3881cc/%D0%BF%D0%BE%D0%B4%D0%BC%D0%B8%D0%B3%D0%B8%D0%B2%D0%B0%D0%B5%D1%82.png" alt="подмигивает"></div>
 
         <button class="expand-btn" id="expandBtn">📍 地址、地图与字幕 ▼</button>
         <div class="expand-content" id="expandContent">
@@ -175,66 +117,61 @@
             <div class="subtitles" id="subtitlesBox"><p class="loading">加载中...</p></div>
         </div>
 
-        <div class="mascot-food">
-            <img src="https://github.com/brunnerka-star/audiokaliningrad/raw/53bdec2cb817b996ac5609617ec50bbd9a3881cc/%D1%81%20%D1%87%D0%B5%D0%BC%D0%BE%D0%B4%D0%B0%D0%BD%D0%BE%D0%BC.png" alt="с чемоданом">
-        </div>
+        <div class="mascot-food"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/53bdec2cb817b996ac5609617ec50bbd9a3881cc/%D1%81%20%D1%87%D0%B5%D0%BC%D0%BE%D0%B4%D0%B0%D0%BD%D0%BE%D0%BC.png" alt="с чемоданом"></div>
 
         <button class="food-btn" id="foodBtn">🍴 哪里好吃？</button>
         <div class="food-content" id="foodContent">
             <div class="food-filters" id="foodFilters">
                 <button class="food-filter active" data-cat="all">全部</button>
-                <button class="food-filter" data-cat="bakery">🥖 Пекарни</button>
-                <button class="food-filter" data-cat="asian">🥡 Азиатская</button>
-                <button class="food-filter" data-cat="eu">🍲 Европейская</button>
-                <button class="food-filter" data-cat="pizza">🍕 Пицца</button>
-                <button class="food-filter" data-cat="zelenogradsk">🌊 Зеленоградск</button>
-                <button class="food-filter" data-cat="svetlogorsk">🌅 Светлогорск</button>
+                <button class="food-filter" data-cat="bakery">🥖 面包店</button>
+                <button class="food-filter" data-cat="asian">🥡 亚洲菜</button>
+                <button class="food-filter" data-cat="eu">🍲 欧洲菜</button>
+                <button class="food-filter" data-cat="pizza">🍕 披萨</button>
+                <button class="food-filter" data-cat="zelenogradsk">🌊 泽列诺格拉茨克</button>
+                <button class="food-filter" data-cat="svetlogorsk">🌅 斯韦特洛戈尔斯克</button>
             </div>
             <div id="foodMap"></div>
-            <div class="food-category show" data-cat="all bakery"><h3>🥖 Пекарни 面包店</h3>
-                <p><strong>Königsbäcker</strong> — ул. Виктора Гюго, 1 | ~300 ₽ (~23 ¥) | 8:00–21:00</p>
-                <p><strong>Königsbäcker</strong> — ул. Черняховского, 6А | ~300 ₽ (~23 ¥) | 8:00–21:00</p>
-                <p><strong>Лев Бородинский</strong> — Октябрьская ул., 2/3 | до 1000 ₽ (~76 ¥) | будни 8–21, вых. 9–21</p>
-                <p><strong>Лев Бородинский</strong> — ул. Черняховского, 7 | до 1000 ₽ (~76 ¥) | будни 8–21, вых. 9–21</p>
-                <p><strong>Лев Бородинский</strong> — ул. Горького, 10–14 | до 1000 ₽ (~76 ¥) | будни 8–21, вых. 9–21</p>
+            <div class="food-category show" data-cat="all bakery"><h3>🥖 面包店</h3>
+                <p><strong>Königsbäcker</strong> — ул. Виктора Гюго, 1 | ~300 ₽ (~22 ¥) | 8:00–21:00</p>
+                <p><strong>Königsbäcker</strong> — ул. Черняховского, 6А | ~300 ₽ (~22 ¥) | 8:00–21:00</p>
+                <p><strong>Лев Бородинский</strong> — Октябрьская ул., 2/3 | до 1000 ₽ (~37–74 ¥) | будни 8–21, вых. 9–21</p>
+                <p><strong>Лев Бородинский</strong> — ул. Черняховского, 7 | до 1000 ₽ (~37–74 ¥) | будни 8–21, вых. 9–21</p>
+                <p><strong>Лев Бородинский</strong> — ул. Горького, 10–14 | до 1000 ₽ (~37–74 ¥) | будни 8–21, вых. 9–21</p>
             </div>
-            <div class="food-category show" data-cat="all asian"><h3>🥡 Азиатская кухня 亚洲菜</h3>
-                <p><strong>Kono</strong> — Ленинский просп., 35–37 | от 500 ₽ (~38 ¥) | 11:00–23:00</p>
-                <p><strong>Фьюжн Экспресс</strong> — Ленинский просп., 2 | от 300 ₽ (~23 ¥) | 10:00–22:00</p>
-                <p><strong>Белый тигр</strong> — ул. Карла Маркса, 14 | до 1000 ₽ (~76 ¥) | 10:00–22:00</p>
+            <div class="food-category show" data-cat="all asian"><h3>🥡 亚洲菜</h3>
+                <p><strong>Kono</strong> — Ленинский просп., 35–37 | от 500 ₽ (~37 ¥) | 11:00–23:00</p>
+                <p><strong>Фьюжн Экспресс</strong> — Ленинский просп., 2 | от 300 ₽ (~22 ¥) | 10:00–22:00</p>
+                <p><strong>Белый тигр</strong> — ул. Карла Маркса, 14 | до 1000 ₽ (~37–74 ¥) | 10:00–22:00</p>
             </div>
-            <div class="food-category show" data-cat="all eu"><h3>🍲 Европейская и славянская кухня</h3>
-                <p><strong>Поварешка</strong> — просп. Мира, 61 | от 500 ₽ (~38 ¥) | 9:00–21:00</p>
-                <p><strong>Брикас</strong> — Театральная ул., 30 | 1000–2500 ₽ | Вс–Чт 10–22, Пт–Сб 10–23</p>
-                <p><strong>Борщ и сало</strong> — пл. Победы, 10 | 700–1000 ₽ | Пн–Чт 12–23, Пт–Сб 12–00, Вс 12–23</p>
-                <p><strong>Цотлер (Zötler)</strong> — Ленинский просп., 3 | 1000–2500 ₽ | Вс–Чт 12–23, Пт–Сб 12–00</p>
-                <p><strong>Татьяна</strong> — ул. Карла Маркса, 41 | 700–1500 ₽ | Пн–Чт 12–00, Пт–Сб 15–02, Вс 15–01</p>
-                <p><strong>Kaiser Wurst</strong> — ул. Сержанта Колоскова, 1Б | 1500–2000 ₽ | 11:00–23:00</p>
-                <p><strong>Арт Депо</strong> — ул. Судостроительная, 6–8 | 1000–1800 ₽ | будни 11–22, вых. 12–23</p>
-                <p><strong>Мадам Буше</strong> — Октябрьская ул., 2А | 1200–5000 ₽ | 11:00–23:00</p>
+            <div class="food-category show" data-cat="all eu"><h3>🍲 欧洲和斯拉夫菜</h3>
+                <p><strong>Поварешка</strong> — просп. Мира, 61 | от 500 ₽ (~37 ¥) | 9:00–21:00</p>
+                <p><strong>Брикас</strong> — Театральная ул., 30 | 1000–2500 ₽ (~74–185 ¥) | Вс–Чт 10–22, Пт–Сб 10–23</p>
+                <p><strong>Борщ и сало</strong> — пл. Победы, 10 | 700–1000 ₽ (~52–74 ¥) | Пн–Чт 12–23, Пт–Сб 12–00, Вс 12–23</p>
+                <p><strong>Цотлер (Zötler)</strong> — Ленинский просп., 3 | 1000–2500 ₽ (~74–185 ¥) | Вс–Чт 12–23, Пт–Сб 12–00</p>
+                <p><strong>Татьяна</strong> — ул. Карла Маркса, 41 | 700–1500 ₽ (~52–111 ¥) | Пн–Чт 12–00, Пт–Сб 15–02, Вс 15–01</p>
+                <p><strong>Kaiser Wurst</strong> — ул. Сержанта Колоскова, 1Б | 1500–2000 ₽ (~111–148 ¥) | 11:00–23:00</p>
+                <p><strong>Арт Депо</strong> — ул. Судостроительная, 6–8 | 1000–1800 ₽ (~74–133 ¥) | будни 11–22, вых. 12–23</p>
+                <p><strong>Мадам Буше</strong> — Октябрьская ул., 2А | 1200–5000 ₽ (~89–370 ¥) | 11:00–23:00</p>
             </div>
-            <div class="food-category show" data-cat="all pizza"><h3>🍕 Пиццерии и бургерные</h3>
-                <p><strong>Вкусно и точка</strong> — Театральная ул., 30 | ~300 ₽ (~23 ¥) | 7:00–00:00</p>
-                <p><strong>Додо</strong> — Советский просп., 1 | от 500 ₽ (~38 ¥) | 9:00–01:00</p>
+            <div class="food-category show" data-cat="all pizza"><h3>🍕 披萨和汉堡</h3>
+                <p><strong>Вкусно и точка</strong> — Театральная ул., 30 | ~300 ₽ (~22 ¥) | 7:00–00:00</p>
+                <p><strong>Додо</strong> — Советский просп., 1 | от 500 ₽ (~37 ¥) | 9:00–01:00</p>
             </div>
-            <div class="food-category show" data-cat="all zelenogradsk"><h3>🌊 Зеленоградск</h3>
-                <p><strong>Промрыба</strong> — ул. Крымская, 5 | ~800 ₽ (~61 ¥) | 11:00–21:00</p>
-                <p><strong>Цеппелины</strong> — Курортный просп., 19 | 700–1000 ₽ | 10:00–22:00</p>
-                <p><strong>Балт (Balt)</strong> — Курортный просп., 16 | 1500–2500 ₽ | 12:00–23:00</p>
+            <div class="food-category show" data-cat="all zelenogradsk"><h3>🌊 泽列诺格拉茨克</h3>
+                <p><strong>Промрыба</strong> — ул. Крымская, 5 | ~800 ₽ (~59 ¥) | 11:00–21:00</p>
+                <p><strong>Цеппелины</strong> — Курортный просп., 19 | 700–1000 ₽ (~52–74 ¥) | 10:00–22:00</p>
+                <p><strong>Балт (Balt)</strong> — Курортный просп., 16 | 1500–2500 ₽ (~111–185 ¥) | 12:00–23:00</p>
             </div>
-            <div class="food-category show" data-cat="all svetlogorsk"><h3>🌅 Светлогорск</h3>
-                <p><strong>Папаша Беппе</strong> — ул. Ленина, 8 | 800–1000 ₽ | 11:00–23:00</p>
-                <p><strong>Солнечная терраса</strong> — ул. Ленина, 11/2 | 1000–1600 ₽ | 10:00–22:00</p>
-                <p><strong>Курортный</strong> — Морской бульвар, 19 | 1000–1400 ₽</p>
+            <div class="food-category show" data-cat="all svetlogorsk"><h3>🌅 斯韦特洛戈尔斯克</h3>
+                <p><strong>Папаша Беппе</strong> — ул. Ленина, 8 | 800–1000 ₽ (~59–74 ¥) | 11:00–23:00</p>
+                <p><strong>Солнечная терраса</strong> — ул. Ленина, 11/2 | 1000–1600 ₽ (~74–119 ¥) | 10:00–22:00</p>
+                <p><strong>Курортный</strong> — Морской бульвар, 19 | 1000–1400 ₽ (~74–104 ¥) | график уточняйте</p>
             </div>
         </div>
 
         <div class="site-link"><a href="https://weishitour.tilda.ws/" target="_blank">🌐 WeishiTour.tilda.ws</a></div>
-
         <div class="footer">
-            <div class="mascot-bow">
-                <img src="https://github.com/brunnerka-star/audiokaliningrad/raw/53bdec2cb817b996ac5609617ec50bbd9a3881cc/%D0%BF%D0%BE%D0%BA%D0%BB%D0%BE%D0%BD.png" alt="кланяется">
-            </div>
+            <div class="mascot-bow"><img src="https://github.com/brunnerka-star/audiokaliningrad/raw/53bdec2cb817b996ac5609617ec50bbd9a3881cc/%D0%BF%D0%BE%D0%BA%D0%BB%D0%BE%D0%BD.png" alt="кланяется"></div>
             <p class="disclaimer">⚠️ 如翻译有误，敬请谅解。此为试用版音频指南。</p>
             © 2026 Weishi Tour. 加里宁格勒 · Калининград
         </div>
@@ -243,29 +180,26 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
     (function() {
-        // ===== СОСТОЯНИЕ =====
-        let currentRoute = 'kaliningrad';
-        let currentSlide = 0;
-        let placeMap = null;
-        let foodMap = null;
-        let expandOpen = false;
-        let foodOpen = false;
+        var currentRoute = 'kaliningrad';
+        var currentSlide = 0;
+        var placeMap = null;
+        var foodMap = null;
+        var expandOpen = false;
+        var foodOpen = false;
 
-        // ===== DOM-ЭЛЕМЕНТЫ =====
-        const routeTabs = document.querySelectorAll('.route-tab');
-        const sliders = {
+        var routeTabs = document.querySelectorAll('.route-tab');
+        var sliders = {
             kaliningrad: document.getElementById('slider-kaliningrad'),
             zelenogradsk: document.getElementById('slider-zelenogradsk'),
             svetlogorsk: document.getElementById('slider-svetlogorsk')
         };
-        const counter = document.getElementById('counter');
-        const expandBtn = document.getElementById('expandBtn');
-        const expandContent = document.getElementById('expandContent');
-        const foodBtn = document.getElementById('foodBtn');
-        const foodContent = document.getElementById('foodContent');
+        var counter = document.getElementById('counter');
+        var expandBtn = document.getElementById('expandBtn');
+        var expandContent = document.getElementById('expandContent');
+        var foodBtn = document.getElementById('foodBtn');
+        var foodContent = document.getElementById('foodContent');
 
-        // ===== ДАННЫЕ ЗАВЕДЕНИЙ =====
-        const foodPlaces = {
+        var foodPlaces = {
             bakery: [
                 { name: 'Königsbäcker (Гюго)', coords: [54.715, 20.510] },
                 { name: 'Königsbäcker (Чернях.)', coords: [54.718, 20.508] },
@@ -304,23 +238,12 @@
             ]
         };
 
-        // ===== ФУНКЦИИ =====
-        function getSlides() {
-            return sliders[currentRoute].querySelectorAll('.slide');
-        }
-
-        function getActiveSlide() {
-            const slides = getSlides();
-            return slides[currentSlide];
-        }
-
-        function updateCounter() {
-            const slides = getSlides();
-            counter.textContent = `${currentSlide + 1} / ${slides.length}`;
-        }
+        function getSlides() { return sliders[currentRoute].querySelectorAll('.slide'); }
+        function getActiveSlide() { return getSlides()[currentSlide]; }
+        function updateCounter() { var s = getSlides(); counter.textContent = (currentSlide + 1) + ' / ' + s.length; }
 
         function showSlide(n) {
-            const slides = getSlides();
+            var slides = getSlides();
             slides[currentSlide].classList.remove('active');
             currentSlide = (n + slides.length) % slides.length;
             slides[currentSlide].classList.add('active');
@@ -328,54 +251,36 @@
             if (expandOpen) updateExpandContent();
         }
 
-        window.nextSlide = function() {
-            const slides = getSlides();
-            showSlide(currentSlide + 1);
-        };
+        window.nextSlide = function() { showSlide(currentSlide + 1); };
+        window.prevSlide = function() { showSlide(currentSlide - 1); };
 
-        window.prevSlide = function() {
-            const slides = getSlides();
-            showSlide(currentSlide - 1);
-        };
-
-        // ===== ПЕРЕКЛЮЧЕНИЕ МАРШРУТОВ =====
-        routeTabs.forEach(tab => {
+        routeTabs.forEach(function(tab) {
             tab.addEventListener('click', function() {
-                routeTabs.forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-
-                // Скрываем все слайдеры
-                Object.values(sliders).forEach(s => s.style.display = 'none');
-
-                // Показываем нужный
-                currentRoute = this.dataset.route;
+                routeTabs.forEach(function(t) { t.classList.remove('active'); });
+                tab.classList.add('active');
+                Object.keys(sliders).forEach(function(k) { sliders[k].style.display = 'none'; });
+                currentRoute = tab.dataset.route;
                 sliders[currentRoute].style.display = 'block';
                 currentSlide = 0;
-                const slides = getSlides();
-                slides.forEach(s => s.classList.remove('active'));
+                var slides = getSlides();
+                slides.forEach(function(s) { s.classList.remove('active'); });
                 slides[0].classList.add('active');
                 updateCounter();
                 if (expandOpen) updateExpandContent();
             });
         });
 
-        // ===== СВАЙП =====
-        let touchStartX = 0;
-        document.addEventListener('touchstart', function(e) {
-            touchStartX = e.changedTouches[0].screenX;
-        });
+        var touchStartX = 0;
+        document.addEventListener('touchstart', function(e) { touchStartX = e.changedTouches[0].screenX; });
         document.addEventListener('touchend', function(e) {
-            const diff = touchStartX - e.changedTouches[0].screenX;
-            if (Math.abs(diff) > 50) {
-                diff > 0 ? nextSlide() : prevSlide();
+            if (Math.abs(touchStartX - e.changedTouches[0].screenX) > 50) {
+                touchStartX - e.changedTouches[0].screenX > 0 ? nextSlide() : prevSlide();
             }
         });
 
-        // ===== КНОПКИ НАВИГАЦИИ =====
         document.getElementById('prevBtn').addEventListener('click', prevSlide);
         document.getElementById('nextBtn').addEventListener('click', nextSlide);
 
-        // ===== РАЗВОРАЧИВАЕМАЯ СЕКЦИЯ =====
         window.toggleExpand = function() {
             expandOpen = !expandOpen;
             expandContent.classList.toggle('show', expandOpen);
@@ -385,39 +290,28 @@
         expandBtn.addEventListener('click', toggleExpand);
 
         function updateExpandContent() {
-            const slide = getActiveSlide();
-            const coords = slide.dataset.coords.split(',');
-            const title = slide.dataset.title;
-            const addr = slide.dataset.addr;
-            const subsFile = slide.dataset.subs;
-
-            document.getElementById('addressBox').innerHTML = `<strong>${title}</strong><br>📌 ${addr}<br>📍 坐标：${coords[0]}, ${coords[1]}`;
+            var slide = getActiveSlide();
+            var c = slide.dataset.coords.split(',');
+            var title = slide.dataset.title;
+            var addr = slide.dataset.addr;
+            document.getElementById('addressBox').innerHTML = '<strong>' + title + '</strong><br>📌 ' + addr + '<br>📍 ' + c[0] + ', ' + c[1];
             document.getElementById('subtitlesBox').innerHTML = '<p class="loading">加载中...</p>';
+            document.getElementById('osmLink').href = 'https://www.openstreetmap.org/?mlat=' + c[0] + '&mlon=' + c[1] + '&zoom=16';
+            document.getElementById('amapLink').href = 'https://uri.amap.com/marker?position=' + c[1] + ',' + c[0] + '&name=' + encodeURIComponent(title);
 
-            // Ссылки на карты
-            document.getElementById('osmLink').href = `https://www.openstreetmap.org/?mlat=${coords[0]}&mlon=${coords[1]}&zoom=16`;
-            document.getElementById('amapLink').href = `https://uri.amap.com/marker?position=${coords[1]},${coords[0]}&name=${encodeURIComponent(title)}`;
+            fetch('https://raw.githubusercontent.com/brunnerka-star/audiokaliningrad/main/' + slide.dataset.subs)
+                .then(function(r) { return r.text(); })
+                .then(function(t) {
+                    var h = t.split('\n').filter(function(l) { return l.trim(); }).map(function(l) { return '<p>' + l + '</p>'; }).join('');
+                    document.getElementById('subtitlesBox').innerHTML = h || '<p>暂无字幕</p>';
+                }).catch(function() { document.getElementById('subtitlesBox').innerHTML = '<p>字幕暂时不可用。</p>'; });
 
-            // Загружаем субтитры
-            const rawUrl = `https://raw.githubusercontent.com/brunnerka-star/audiokaliningrad/main/${subsFile}`;
-            fetch(rawUrl)
-                .then(r => r.text())
-                .then(text => {
-                    const html = text.split('\n').filter(line => line.trim()).map(line => `<p>${line}</p>`).join('');
-                    document.getElementById('subtitlesBox').innerHTML = html || '<p>暂无字幕</p>';
-                })
-                .catch(() => {
-                    document.getElementById('subtitlesBox').innerHTML = '<p>字幕暂时不可用。</p>';
-                });
-
-            // Карта (Яндекс)
             if (placeMap) placeMap.remove();
-            placeMap = L.map('placeMap').setView([+coords[0], +coords[1]], 16);
+            placeMap = L.map('placeMap').setView([+c[0], +c[1]], 16);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(placeMap);
-            L.marker([+coords[0], +coords[1]]).addTo(placeMap).bindPopup(`<b>${title}</b><br>${addr}`).openPopup();
+            L.marker([+c[0], +c[1]]).addTo(placeMap).bindPopup('<b>' + title + '</b><br>' + addr).openPopup();
         }
 
-        // ===== ЕДА =====
         window.toggleFood = function() {
             foodOpen = !foodOpen;
             foodContent.classList.toggle('show', foodOpen);
@@ -430,36 +324,22 @@
             if (foodMap) foodMap.remove();
             foodMap = L.map('foodMap').setView([54.710, 20.505], 13);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(foodMap);
-            const markers = [];
-            if (cat === 'all') {
-                Object.values(foodPlaces).forEach(arr => markers.push(...arr));
-            } else {
-                markers.push(...(foodPlaces[cat] || []));
-            }
-            markers.forEach(function(p) {
-                L.marker(p.coords).addTo(foodMap).bindPopup(`<b>${p.name}</b>`);
-            });
+            var m = [];
+            if (cat === 'all') { Object.keys(foodPlaces).forEach(function(k) { m = m.concat(foodPlaces[k]); }); }
+            else { m = foodPlaces[cat] || []; }
+            m.forEach(function(p) { L.marker(p.coords).addTo(foodMap).bindPopup('<b>' + p.name + '</b>'); });
         }
 
-        // ===== ФИЛЬТРЫ ЕДЫ =====
         document.getElementById('foodFilters').addEventListener('click', function(e) {
             if (!e.target.classList.contains('food-filter')) return;
-            const filters = document.querySelectorAll('.food-filter');
-            filters.forEach(function(b) { b.classList.remove('active'); });
+            document.querySelectorAll('.food-filter').forEach(function(b) { b.classList.remove('active'); });
             e.target.classList.add('active');
-            const cat = e.target.dataset.cat;
-            document.querySelectorAll('.food-category').forEach(function(el) {
-                el.classList.toggle('show', el.dataset.cat.includes(cat));
-            });
+            var cat = e.target.dataset.cat;
+            document.querySelectorAll('.food-category').forEach(function(el) { el.classList.toggle('show', el.dataset.cat.indexOf(cat) !== -1); });
             initFoodMap(cat);
         });
 
-        // ===== ЗАЩИТА ФОТО =====
-        document.querySelectorAll('img').forEach(function(img) {
-            img.addEventListener('touchstart', function(e) { e.preventDefault(); });
-        });
-
-        // ===== ИНИЦИАЛИЗАЦИЯ =====
+        document.querySelectorAll('img').forEach(function(i) { i.addEventListener('touchstart', function(e) { e.preventDefault(); }); });
         updateCounter();
     })();
     </script>
